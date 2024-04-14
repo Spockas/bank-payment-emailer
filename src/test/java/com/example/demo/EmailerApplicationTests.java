@@ -8,6 +8,7 @@ class EmailerApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

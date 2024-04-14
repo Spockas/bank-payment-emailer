@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: emailSender
+  mail:
+    host: localhost
+    port: 25
+    username: username
+    password: password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: false
