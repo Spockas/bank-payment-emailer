@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class PaymentPerson{
-    @Schema(example = "1")
+    @Schema(example = "Some name")
     @NotBlank(message = "name is required")
     private final String name;
     @Schema(example = "XX000000000000000000")
