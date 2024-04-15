@@ -45,12 +45,22 @@ class TemplateFillerTest {
     @Test
     public void testReplaceMultiple() {
         String template = "Name: {{name}}; Amount: {{amount}}";
-        TemplateFiller filler = new TemplateFiller(template);
+        TemplateFiller templateFiller = new TemplateFiller(template);
 
-        filler.replace("name", "Other Name");
-        filler.replace("amount", 3.14);
+        templateFiller.replace("name", "Other Name");
+        templateFiller.replace("amount", 3.14);
 
-        assertEquals("Name: Other Name; Amount: 3.14", filler.getFilledTemplate());
+        assertEquals("Name: Other Name; Amount: 3.14", templateFiller.getFilledTemplate());
     }
 
+
+    @Test
+    public void testReplaceDontReplace() {
+        String template = "Amount: {{amount}}";
+        TemplateFiller templateFiller = new TemplateFiller(template);
+
+        templateFiller.replace("name", "Other Name");
+
+        assertEquals(template, templateFiller.getFilledTemplate());
+    }
 }
